@@ -80,6 +80,14 @@ class AddBudgetCategoryViewController: UIViewController {
         setupConstraints()
     }
     // MARK: - Helpers
+    
+    private var isFormValid: Bool {
+        guard let name = nameTextField.text, let amount = amountTextField.text else {
+            return false
+        }
+        
+        return !name.isEmpty && !amount.isEmpty && amount.isNumeric && amount.isGreaterThan(0)
+    }
 
     private func setupUI() {
         
@@ -119,6 +127,10 @@ class AddBudgetCategoryViewController: UIViewController {
     // MARK: - Selectors
     
     @objc private func addBudgetButtonPressed (_ sender: UIButton) {
-        
+        if isFormValid {
+            
+        } else {
+            errorMessageLabel.text = "Unable to save budget. Budget name and amount is required"
+        }
     }
 }
