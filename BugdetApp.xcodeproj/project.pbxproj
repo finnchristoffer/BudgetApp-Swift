@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		40D7EE938AD188FA2F4E7C3A /* Pods_BugdetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E629B9F12EDDEA361DB5AF6 /* Pods_BugdetApp.framework */; };
+		4A48C0822983DBD0005D6C2E /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C0802983DBD0005D6C2E /* BudgetModel.xcdatamodeld */; };
+		4A48C0842983E053005D6C2E /* AddBudgetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C0832983E053005D6C2E /* AddBudgetCategoryViewController.swift */; };
 		4A7066DB2983DA3700B37330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DA2983DA3700B37330 /* AppDelegate.swift */; };
 		4A7066DD2983DA3700B37330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DC2983DA3700B37330 /* SceneDelegate.swift */; };
-		4A7066DF2983DA3700B37330 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DE2983DA3700B37330 /* ViewController.swift */; };
+		4A7066DF2983DA3700B37330 /* BudgetCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */; };
 		4A7066E42983DA3800B37330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7066E32983DA3800B37330 /* Assets.xcassets */; };
 		4A7066E72983DA3800B37330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7066E52983DA3800B37330 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,10 +20,12 @@
 /* Begin PBXFileReference section */
 		1891872DA1453C6B4FD25DDC /* Pods-BugdetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugdetApp.release.xcconfig"; path = "Target Support Files/Pods-BugdetApp/Pods-BugdetApp.release.xcconfig"; sourceTree = "<group>"; };
 		3E629B9F12EDDEA361DB5AF6 /* Pods_BugdetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BugdetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A48C0812983DBD0005D6C2E /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
+		4A48C0832983E053005D6C2E /* AddBudgetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryViewController.swift; sourceTree = "<group>"; };
 		4A7066D72983DA3700B37330 /* BugdetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugdetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7066DA2983DA3700B37330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A7066DC2983DA3700B37330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4A7066DE2983DA3700B37330 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		4A7066E32983DA3800B37330 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7066E62983DA3800B37330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A7066E82983DA3800B37330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +50,6 @@
 				757045D19FF90DEC3F433116 /* Pods-BugdetApp.debug.xcconfig */,
 				1891872DA1453C6B4FD25DDC /* Pods-BugdetApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,10 +76,12 @@
 			children = (
 				4A7066DA2983DA3700B37330 /* AppDelegate.swift */,
 				4A7066DC2983DA3700B37330 /* SceneDelegate.swift */,
-				4A7066DE2983DA3700B37330 /* ViewController.swift */,
+				4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */,
 				4A7066E32983DA3800B37330 /* Assets.xcassets */,
 				4A7066E52983DA3800B37330 /* LaunchScreen.storyboard */,
 				4A7066E82983DA3800B37330 /* Info.plist */,
+				4A48C0802983DBD0005D6C2E /* BudgetModel.xcdatamodeld */,
+				4A48C0832983E053005D6C2E /* AddBudgetCategoryViewController.swift */,
 			);
 			path = BugdetApp;
 			sourceTree = "<group>";
@@ -203,8 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7066DF2983DA3700B37330 /* ViewController.swift in Sources */,
+				4A48C0822983DBD0005D6C2E /* BudgetModel.xcdatamodeld in Sources */,
+				4A7066DF2983DA3700B37330 /* BudgetCategoriesTableViewController.swift in Sources */,
 				4A7066DB2983DA3700B37330 /* AppDelegate.swift in Sources */,
+				4A48C0842983E053005D6C2E /* AddBudgetCategoryViewController.swift in Sources */,
 				4A7066DD2983DA3700B37330 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +422,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A48C0802983DBD0005D6C2E /* BudgetModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A48C0812983DBD0005D6C2E /* BudgetModel.xcdatamodel */,
+			);
+			currentVersion = 4A48C0812983DBD0005D6C2E /* BudgetModel.xcdatamodel */;
+			path = BudgetModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A7066CF2983DA3700B37330 /* Project object */;
 }
