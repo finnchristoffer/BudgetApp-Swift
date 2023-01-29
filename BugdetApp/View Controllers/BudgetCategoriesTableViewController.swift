@@ -54,6 +54,16 @@ class BudgetCategoriesTableViewController: UITableViewController {
         title = "Budget"
     }
     
+    private func deleteBudgetCategory(_ budgetCategory: BudgetCategory) {
+        
+        persistentContainers.viewContext.delete(budgetCategory)
+        do {
+            try persistentContainers.viewContext.save()
+        } catch {
+            showAlert(title: "Error", message: "Unable to save budget category.")
+        }
+    }
+    
     // MARK: - Selectors
     
     @objc func showAddBudgetCategory(_ sender: UIBarButtonItem) {
@@ -70,6 +80,14 @@ class BudgetCategoriesTableViewController: UITableViewController {
         let budgetCategory = fetchedResultsController.object(at: indexPath)
         
         self.navigationController?.pushViewController(BudgetDetailsViewController(budgetCategory: budgetCategory, persistentContainer: persistentContainers), animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let budgetCategory = fetchedResultsController.object(at: indexPath)
+            deleteBudgetCategory(budgetCategory)
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

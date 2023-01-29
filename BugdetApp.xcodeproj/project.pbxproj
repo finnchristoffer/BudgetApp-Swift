@@ -16,6 +16,7 @@
 		4A48C08E29863516005D6C2E /* BudgetCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C08D29863516005D6C2E /* BudgetCategoryTableViewCell.swift */; };
 		4A48C09129864B68005D6C2E /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C09029864B68005D6C2E /* BudgetCategory+CoreDataClass.swift */; };
 		4A48C09329864C43005D6C2E /* NSSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C09229864C43005D6C2E /* NSSet+Extensions.swift */; };
+		4A48C09529866E0B005D6C2E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C09429866E0B005D6C2E /* UIViewController+Extentions.swift */; };
 		4A7066DB2983DA3700B37330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DA2983DA3700B37330 /* AppDelegate.swift */; };
 		4A7066DD2983DA3700B37330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DC2983DA3700B37330 /* SceneDelegate.swift */; };
 		4A7066DF2983DA3700B37330 /* BudgetCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */; };
@@ -34,6 +35,7 @@
 		4A48C08D29863516005D6C2E /* BudgetCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		4A48C09029864B68005D6C2E /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4A48C09229864C43005D6C2E /* NSSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Extensions.swift"; sourceTree = "<group>"; };
+		4A48C09429866E0B005D6C2E /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		4A7066D72983DA3700B37330 /* BugdetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugdetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7066DA2983DA3700B37330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A7066DC2983DA3700B37330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				4A48C0862984289B005D6C2E /* String+Extentions.swift */,
 				4A48C08A2984F521005D6C2E /* Double+Extentions.swift */,
 				4A48C09229864C43005D6C2E /* NSSet+Extensions.swift */,
+				4A48C09429866E0B005D6C2E /* UIViewController+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -89,6 +92,16 @@
 				4A48C09029864B68005D6C2E /* BudgetCategory+CoreDataClass.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4A48C09629866F0C005D6C2E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A48C0882984EF2E005D6C2E /* BudgetDetailsViewController.swift */,
+				4A48C0832983E053005D6C2E /* AddBudgetCategoryViewController.swift */,
+				4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		4A7066CE2983DA3700B37330 = {
@@ -112,18 +125,16 @@
 		4A7066D92983DA3700B37330 /* BugdetApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A48C09629866F0C005D6C2E /* View Controllers */,
 				4A48C08F29864B4B005D6C2E /* Models */,
 				4A48C08C2986350A005D6C2E /* Cells */,
 				4A48C0852984288D005D6C2E /* Extentions */,
 				4A7066DA2983DA3700B37330 /* AppDelegate.swift */,
 				4A7066DC2983DA3700B37330 /* SceneDelegate.swift */,
-				4A7066DE2983DA3700B37330 /* BudgetCategoriesTableViewController.swift */,
 				4A7066E32983DA3800B37330 /* Assets.xcassets */,
 				4A7066E52983DA3800B37330 /* LaunchScreen.storyboard */,
 				4A7066E82983DA3800B37330 /* Info.plist */,
 				4A48C0802983DBD0005D6C2E /* BudgetModel.xcdatamodeld */,
-				4A48C0832983E053005D6C2E /* AddBudgetCategoryViewController.swift */,
-				4A48C0882984EF2E005D6C2E /* BudgetDetailsViewController.swift */,
 			);
 			path = BugdetApp;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 				4A48C09329864C43005D6C2E /* NSSet+Extensions.swift in Sources */,
 				4A48C0822983DBD0005D6C2E /* BudgetModel.xcdatamodeld in Sources */,
 				4A48C08B2984F521005D6C2E /* Double+Extentions.swift in Sources */,
+				4A48C09529866E0B005D6C2E /* UIViewController+Extentions.swift in Sources */,
 				4A48C0872984289B005D6C2E /* String+Extentions.swift in Sources */,
 				4A7066DF2983DA3700B37330 /* BudgetCategoriesTableViewController.swift in Sources */,
 				4A48C09129864B68005D6C2E /* BudgetCategory+CoreDataClass.swift in Sources */,
