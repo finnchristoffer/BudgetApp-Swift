@@ -95,7 +95,7 @@ class BudgetDetailsViewController: UIViewController {
         return label
     }()
     
-    var transactionTotal: Double {
+    private var transactionTotal: Double {
         let transaction = fetchedResultsController.fetchedObjects ?? []
         return transaction.reduce(0) { next, transaction in
             next + transaction.amount
@@ -139,25 +139,9 @@ class BudgetDetailsViewController: UIViewController {
     }
     
     private func setupConstraint() {
-        nameTextField.snp.makeConstraints { make in
-            make.width.equalTo(200)
-        }
-        
-        amountTextField.snp.makeConstraints { make in
-            make.width.equalTo(200)
-        }
-        
-        saveTransactionButton.snp.makeConstraints { make in
-            make.centerX.equalTo(stackView)
-        }
-        
+
         stackView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.height.equalTo(600)
+            make.top.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -192,13 +176,24 @@ class BudgetDetailsViewController: UIViewController {
     }
     
     private func updateTransactionTotal() {
-        transactionsTotalLabel.text = transactionTotal.formatAsCurrency()
+//        transactionsTotalLabel.text = transactionTotal.formatAsCurrency()
+        transactionsTotalLabel.text = budgetCategory.transactionTotal.formatAsCurrency()
     }
     
     private func resetForm() {
         nameTextField.text = ""
         amountTextField.text = ""
         errorMessageLabel.text = ""
+    }
+    
+    private func deleteTransaction(_ transaction: Transaction) {
+        
+        persistentContainer.viewContext.delete(transaction)
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            errorMessageLabel.text = "Unable to delete transaction"
+        }
     }
     
     // MARK: - Selector
@@ -246,4 +241,10 @@ extension BudgetDetailsViewController: NSFetchedResultsControllerDelegate {
 
 extension BudgetDetailsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let transaction = fetchedResultsController.object(at: indexPath)
+            deleteTransaction(transaction)
+        }
+    }
 }
